@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ContactsViewController.h"
+#import "ContactsManager.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +22,11 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ContactsViewController* cvc = [[ContactsViewController alloc] init];
+    ContactsViewController* cvc = [[ContactsViewController alloc] initWithStyle:UITableViewStylePlain];
     self.window.rootViewController = cvc;
+    
+    // Just initialize the contacts manager;
+    [ContactsManager sharedInstance];
 
     [self.window makeKeyAndVisible];
     

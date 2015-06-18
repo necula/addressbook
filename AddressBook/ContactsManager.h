@@ -14,4 +14,8 @@
 
 +(instancetype)sharedInstance;
 
+-(NSArray*)getContacts;
+-(void)removeContactWithUID:(unsigned int)UID;
+-(void)addRandomContact;
+
 @end
