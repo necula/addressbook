@@ -11,7 +11,7 @@
 
 @implementation Contact
 
--(instancetype)initWithName:(NSString*)name surname:(NSString*)surname phoneNumber:(NSString*)phoneNumber emailAddress:(NSString*)emailAddress
+-(instancetype)initWithName:(NSString*)name surname:(NSString*)surname phoneNumber:(NSString*)phoneNumber emailAddress:(NSString*)emailAddress UID:(unsigned int)UID
 {
     self = [super init];
     
@@ -22,8 +22,14 @@
     _surname = surname;
     _phoneNumber = phoneNumber;
     _emailAddress = emailAddress;
+    _UID =  UID;
     
     return self;
+}
+
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"%@ %@ - %@ - %@", _name, _surname, _phoneNumber, _emailAddress];
 }
 
 @end

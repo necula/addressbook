@@ -17,6 +17,8 @@
 @property (nonatomic, copy) NSString* phoneNumber;
 @property (nonatomic, copy) NSString* emailAddress;
 
--(instancetype)initWithName:(NSString*)name surname:(NSString*)surname phoneNumber:(NSString*)phoneNumber emailAddress:(NSString*)emailAddress;
+@property (nonatomic) unsigned int UID;
+
+-(instancetype)initWithName:(NSString*)name surname:(NSString*)surname phoneNumber:(NSString*)phoneNumber emailAddress:(NSString*)emailAddress UID:(unsigned int)UID;
 
 @end
