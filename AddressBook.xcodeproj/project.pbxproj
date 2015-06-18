@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		0671D5081B336BF60062CCE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D5071B336BF60062CCE6 /* main.m */; };
 		0671D50B1B336BF60062CCE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D50A1B336BF60062CCE6 /* AppDelegate.m */; };
-		0671D50E1B336BF60062CCE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D50D1B336BF60062CCE6 /* ViewController.m */; };
+		0671D50E1B336BF60062CCE6 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D50D1B336BF60062CCE6 /* ContactsViewController.m */; };
 		0671D5131B336BF60062CCE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0671D5121B336BF60062CCE6 /* Images.xcassets */; };
 		0671D5221B336BF70062CCE6 /* AddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D5211B336BF70062CCE6 /* AddressBookTests.m */; };
 		0671D52C1B33707F0062CCE6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0671D52B1B33707F0062CCE6 /* Default-568h@2x.png */; };
+		0671D52E1B3374BE0062CCE6 /* ContactsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D52D1B3374BE0062CCE6 /* ContactsManager.m */; };
+		0671D5311B33751B0062CCE6 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D5301B33751B0062CCE6 /* Contact.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +33,17 @@
 		0671D5071B336BF60062CCE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0671D5091B336BF60062CCE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0671D50A1B336BF60062CCE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0671D50C1B336BF60062CCE6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0671D50D1B336BF60062CCE6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0671D50C1B336BF60062CCE6 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		0671D50D1B336BF60062CCE6 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		0671D5121B336BF60062CCE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0671D51B1B336BF70062CCE6 /* AddressBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0671D5201B336BF70062CCE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0671D5211B336BF70062CCE6 /* AddressBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBookTests.m; sourceTree = "<group>"; };
 		0671D52B1B33707F0062CCE6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0671D52D1B3374BE0062CCE6 /* ContactsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsManager.m; sourceTree = "<group>"; };
+		0671D52F1B3374CF0062CCE6 /* ContactsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsManager.h; sourceTree = "<group>"; };
+		0671D5301B33751B0062CCE6 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		0671D5321B3375280062CCE6 /* Contact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +88,13 @@
 				0671D52B1B33707F0062CCE6 /* Default-568h@2x.png */,
 				0671D5091B336BF60062CCE6 /* AppDelegate.h */,
 				0671D50A1B336BF60062CCE6 /* AppDelegate.m */,
-				0671D50C1B336BF60062CCE6 /* ViewController.h */,
-				0671D50D1B336BF60062CCE6 /* ViewController.m */,
+				0671D50C1B336BF60062CCE6 /* ContactsViewController.h */,
+				0671D50D1B336BF60062CCE6 /* ContactsViewController.m */,
 				0671D5121B336BF60062CCE6 /* Images.xcassets */,
+				0671D52D1B3374BE0062CCE6 /* ContactsManager.m */,
+				0671D52F1B3374CF0062CCE6 /* ContactsManager.h */,
+				0671D5301B33751B0062CCE6 /* Contact.m */,
+				0671D5321B3375280062CCE6 /* Contact.h */,
 				0671D5051B336BF60062CCE6 /* Supporting Files */,
 			);
 			path = AddressBook;
@@ -215,8 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0671D50E1B336BF60062CCE6 /* ViewController.m in Sources */,
+				0671D50E1B336BF60062CCE6 /* ContactsViewController.m in Sources */,
 				0671D50B1B336BF60062CCE6 /* AppDelegate.m in Sources */,
+				0671D5311B33751B0062CCE6 /* Contact.m in Sources */,
+				0671D52E1B3374BE0062CCE6 /* ContactsManager.m in Sources */,
 				0671D5081B336BF60062CCE6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

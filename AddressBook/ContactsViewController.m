@@ -1,18 +1,19 @@
 //
-//  ViewController.m
+//  ContactsViewController.m
 //  AddressBook
 //
 //  Created by Gabi on 18/06/15.
 //  Copyright (c) 2015 gn. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ContactsViewController.h"
+#import "ContactsManager.h"
 
-@interface ViewController ()
+@interface ContactsViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ContactsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

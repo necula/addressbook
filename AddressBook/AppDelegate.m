@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "ContactsViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +21,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ViewController* vc = [[ViewController alloc] init];
-    self.window.rootViewController = vc;
+    ContactsViewController* cvc = [[ContactsViewController alloc] init];
+    self.window.rootViewController = cvc;
 
     [self.window makeKeyAndVisible];
     
