@@ -2,23 +2,20 @@
 //  Contact.h
 //  AddressBook
 //
-//  Created by Gabi on 18/06/15.
+//  Created by Gabi on 19/06/15.
 //  Copyright (c) 2015 gn. All rights reserved.
 //
 
-#pragma once
-
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Contact : NSObject
 
-@property (nonatomic, copy) NSString* name;
-@property (nonatomic, copy) NSString* surname;
-@property (nonatomic, copy) NSString* phoneNumber;
-@property (nonatomic, copy) NSString* emailAddress;
+@interface Contact : NSManagedObject
 
-@property (nonatomic) unsigned int UID;
-
--(instancetype)initWithName:(NSString*)name surname:(NSString*)surname phoneNumber:(NSString*)phoneNumber emailAddress:(NSString*)emailAddress UID:(unsigned int)UID;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * surname;
+@property (nonatomic, retain) NSString * phoneNumber;
+@property (nonatomic, retain) NSString * emailAddress;
+@property (nonatomic) int32_t uid;
 
 @end

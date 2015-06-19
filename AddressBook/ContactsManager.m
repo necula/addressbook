@@ -16,12 +16,16 @@
 
 @property (nonatomic, strong) NSMutableArray* contactsArray;
 
+@property (nonatomic, strong) NSManagedObjectContext* context;
+@property (nonatomic, strong) NSPersistentStoreCoordinator* psc;
+@property (nonatomic, strong) NSManagedObjectModel* model;
+
 -(instancetype)init;
 
 @end
 
 static ContactsManager* s_sharedInstance = nil;
-static unsigned int s_lastUID = 0;
+static uint32_t s_lastUID = 0;
 
 @implementation ContactsManager
 
@@ -42,10 +46,42 @@ static unsigned int s_lastUID = 0;
     
     _contactsArray = [[NSMutableArray alloc] init];
 
+    
+    if(![self loadStore])
+    {
+        // FIXME: proper error handling
+        return nil;
+    }
+    
     // FIXME: check for CoreData stuff or load data from CSV
-    [self loadContactsFromCSV:DEFAULT_CONTACTS_FILE];
+    [self addContactsFromCSV:DEFAULT_CONTACTS_FILE];
     
     return self;
+}
+
+-(BOOL)loadStore
+{
+    NSArray* documentsDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectoryPath = [documentsDirectories lastObject];
+    NSString* storePath = [documentsDirectoryPath stringByAppendingPathComponent:@"contacts.store"];
+    
+    NSURL* modelURL = [[NSBundle mainBundle] URLForResource:@"ContactsDataModel" withExtension:@"momd"];
+    _model = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    if(!_model)
+        return NO;
+    
+    NSError* error;
+    NSURL* storeURL = [NSURL fileURLWithPath:storePath];
+    _psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_model];
+    if(![_psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+        return NO;
+    
+    _context = [[NSManagedObjectContext alloc] init];
+    if(!_context)
+        return NO;
+    _context.persistentStoreCoordinator = _psc;
+    
+    return YES;
 }
 
 -(NSArray*)getContacts
@@ -53,17 +89,30 @@ static unsigned int s_lastUID = 0;
     return _contactsArray;
 }
 
--(void)removeContactWithUID:(unsigned int)UID
+-(void)removeContactWithUID:(uint32_t)UID
 {
     // FIXME: improve search time
     for(unsigned int i = 0; i < _contactsArray.count; i++)
     {
-        if(UID == ((Contact*)_contactsArray[i]).UID)
+        if(UID == ((Contact*)_contactsArray[i]).uid)
         {
             [_contactsArray removeObjectAtIndex:i];
             break;
         }
     }
+}
+
+-(void)addContactWithName:(NSString*)name surname:(NSString*)surname phoneNumber:(NSString*)phoneNumber emailAddress:(NSString*)emailAddress
+{
+    uint32_t uid = s_lastUID++;
+    NSEntityDescription* entityDescription = [NSEntityDescription entityForName:@"Contact" inManagedObjectContext:_context];
+    Contact* c = [[Contact alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];
+    c.name = name;
+    c.surname = surname;
+    c.phoneNumber = phoneNumber;
+    c.emailAddress = emailAddress;
+    c.uid = uid;
+    [_contactsArray addObject:c];
 }
 
 -(void)addRandomContact
@@ -72,13 +121,10 @@ static unsigned int s_lastUID = 0;
     NSString* surname = [NSString stringWithFormat:@"Surname%d", arc4random() % 2048];
     NSString* phoneNumber = @"1234";
     NSString* emailAddress = @"name@server.com";
-    unsigned int UID = s_lastUID++;
-    
-    Contact* c = [[Contact alloc] initWithName:name surname:surname phoneNumber:phoneNumber emailAddress:emailAddress UID:UID];
-    [_contactsArray addObject:c];
+    [self addContactWithName:name surname:surname phoneNumber:phoneNumber emailAddress:emailAddress];
 }
 
--(void)loadContactsFromCSV:(NSString*)fileName
+-(void)addContactsFromCSV:(NSString*)fileName
 {
     NSString* filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fileName];
     
@@ -91,15 +137,11 @@ static unsigned int s_lastUID = 0;
         for(NSString* line in lines)
         {
             NSArray* columns = [line componentsSeparatedByString:@";"];
-            
             NSString* name = columns[0];
             NSString* surname = columns[1];
             NSString* phoneNumber = columns[2];
             NSString* emailAddress = columns[3];
-            unsigned int UID = s_lastUID++;
-            
-            Contact* c = [[Contact alloc] initWithName:name surname:surname phoneNumber:phoneNumber emailAddress:emailAddress UID:UID];
-            [_contactsArray addObject:c];
+            [self addContactWithName:name surname:surname phoneNumber:phoneNumber emailAddress:emailAddress];
         }
     }
 }

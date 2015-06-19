@@ -76,7 +76,7 @@
         Contact* c = [[[ContactsManager sharedInstance] getContacts] objectAtIndex:indexPath.row];
         if(c)
         {
-            [[ContactsManager sharedInstance] removeContactWithUID:c.UID];
+            [[ContactsManager sharedInstance] removeContactWithUID:c.uid];
             
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }
