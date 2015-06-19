@@ -47,7 +47,7 @@ static uint32_t s_lastUID = 0;
     
     _contactsArray = [[NSMutableArray alloc] init];
 
-    if(![self loadStore])
+    if(![self initStore])
     {
         // FIXME: proper error handling
         return nil;
@@ -65,7 +65,7 @@ static uint32_t s_lastUID = 0;
     return self;
 }
 
--(BOOL)loadStore
+-(BOOL)initStore
 {
     NSArray* documentsDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectoryPath = [documentsDirectories lastObject];
