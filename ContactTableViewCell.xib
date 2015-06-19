@@ -20,13 +20,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxn-tY-gzI">
-                        <rect key="frame" x="10" y="31" width="120" height="21"/>
+                        <rect key="frame" x="10" y="32" width="109" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DE-He-IQe">
-                        <rect key="frame" x="160" y="31" width="150" height="21"/>
+                        <rect key="frame" x="146" y="32" width="164" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                 <outlet property="fullName" destination="zRh-WP-vWQ" id="TZR-wK-fVb"/>
                 <outlet property="phoneNumber" destination="dxn-tY-gzI" id="hxX-zG-bzc"/>
             </connections>
-            <point key="canvasLocation" x="278" y="310"/>
+            <point key="canvasLocation" x="278" y="308"/>
         </tableViewCell>
     </objects>
 </document>
