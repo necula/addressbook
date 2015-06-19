@@ -8,6 +8,7 @@
 
 #import "ContactsViewController.h"
 #import "ContactsManager.h"
+#import "ContactTableViewCell.h"
 #import "Contact.h"
 
 @interface ContactsViewController ()
@@ -18,8 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+        
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ContactTableViewCell" bundle:nil] forCellReuseIdentifier:@"ContactTableViewCell"];
     
     UIBarButtonItem* addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addContact)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -55,9 +57,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // FIXME: add prettier cell view
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text =  [[[[ContactsManager sharedInstance] getContacts] objectAtIndex:indexPath.row] description];
+    ContactTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"ContactTableViewCell" forIndexPath:indexPath];
+    Contact* c = [[[ContactsManager sharedInstance] getContacts] objectAtIndex:indexPath.row];
+    if(c)
+    {
+        cell.fullName.text = [NSString stringWithFormat:@"%@ %@", c.name, c.surname];
+        cell.phoneNumber.text = c.phoneNumber;
+        cell.emailAddress.text = c.emailAddress;
+    }
 
     return cell;
 }
@@ -76,5 +83,9 @@
     }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.f;
+}
 
 @end
