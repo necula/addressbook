@@ -11,25 +11,14 @@
 		0671D50B1B336BF60062CCE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D50A1B336BF60062CCE6 /* AppDelegate.m */; };
 		0671D50E1B336BF60062CCE6 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D50D1B336BF60062CCE6 /* ContactsViewController.m */; };
 		0671D5131B336BF60062CCE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0671D5121B336BF60062CCE6 /* Images.xcassets */; };
-		0671D5221B336BF70062CCE6 /* AddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D5211B336BF70062CCE6 /* AddressBookTests.m */; };
 		0671D52C1B33707F0062CCE6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0671D52B1B33707F0062CCE6 /* Default-568h@2x.png */; };
 		0671D52E1B3374BE0062CCE6 /* ContactsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D52D1B3374BE0062CCE6 /* ContactsManager.m */; };
-		0671D5361B339B1E0062CCE6 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0671D5351B339B1E0062CCE6 /* ContactTableViewCell.xib */; };
 		0671D5391B339D410062CCE6 /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D5381B339D410062CCE6 /* ContactTableViewCell.m */; };
 		0671D53D1B33F8D90062CCE6 /* contacts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0671D53C1B33F8D90062CCE6 /* contacts.csv */; };
 		0671D5401B34015B0062CCE6 /* ContactsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0671D53E1B34015B0062CCE6 /* ContactsDataModel.xcdatamodeld */; };
 		0671D54F1B3404190062CCE6 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 0671D54E1B3404190062CCE6 /* Contact.m */; };
+		0671D5511B341C940062CCE6 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0671D5501B341C940062CCE6 /* ContactTableViewCell.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0671D51C1B336BF70062CCE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0671D4FA1B336BF60062CCE6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0671D5011B336BF60062CCE6;
-			remoteInfo = AddressBook;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0671D5021B336BF60062CCE6 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,30 +29,20 @@
 		0671D50C1B336BF60062CCE6 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		0671D50D1B336BF60062CCE6 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		0671D5121B336BF60062CCE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0671D51B1B336BF70062CCE6 /* AddressBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0671D5201B336BF70062CCE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0671D5211B336BF70062CCE6 /* AddressBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddressBookTests.m; sourceTree = "<group>"; };
 		0671D52B1B33707F0062CCE6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0671D52D1B3374BE0062CCE6 /* ContactsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsManager.m; sourceTree = "<group>"; };
 		0671D52F1B3374CF0062CCE6 /* ContactsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsManager.h; sourceTree = "<group>"; };
-		0671D5351B339B1E0062CCE6 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactTableViewCell.xib; path = ../ContactTableViewCell.xib; sourceTree = "<group>"; };
 		0671D5371B339D410062CCE6 /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
 		0671D5381B339D410062CCE6 /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
 		0671D53C1B33F8D90062CCE6 /* contacts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = contacts.csv; sourceTree = "<group>"; };
 		0671D53F1B34015B0062CCE6 /* ContactsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactsDataModel.xcdatamodel; sourceTree = "<group>"; };
 		0671D54D1B3404190062CCE6 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		0671D54E1B3404190062CCE6 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		0671D5501B341C940062CCE6 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0671D4FF1B336BF60062CCE6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0671D5181B336BF70062CCE6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				0671D5041B336BF60062CCE6 /* AddressBook */,
-				0671D51E1B336BF70062CCE6 /* AddressBookTests */,
 				0671D5031B336BF60062CCE6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				0671D5021B336BF60062CCE6 /* AddressBook.app */,
-				0671D51B1B336BF70062CCE6 /* AddressBookTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,20 +71,8 @@
 		0671D5041B336BF60062CCE6 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				0671D53C1B33F8D90062CCE6 /* contacts.csv */,
-				0671D52B1B33707F0062CCE6 /* Default-568h@2x.png */,
-				0671D5091B336BF60062CCE6 /* AppDelegate.h */,
-				0671D50A1B336BF60062CCE6 /* AppDelegate.m */,
-				0671D50C1B336BF60062CCE6 /* ContactsViewController.h */,
-				0671D50D1B336BF60062CCE6 /* ContactsViewController.m */,
-				0671D52D1B3374BE0062CCE6 /* ContactsManager.m */,
-				0671D52F1B3374CF0062CCE6 /* ContactsManager.h */,
-				0671D5351B339B1E0062CCE6 /* ContactTableViewCell.xib */,
-				0671D5371B339D410062CCE6 /* ContactTableViewCell.h */,
-				0671D5381B339D410062CCE6 /* ContactTableViewCell.m */,
-				0671D54D1B3404190062CCE6 /* Contact.h */,
-				0671D54E1B3404190062CCE6 /* Contact.m */,
-				0671D53E1B34015B0062CCE6 /* ContactsDataModel.xcdatamodeld */,
+				0671D5531B341D6F0062CCE6 /* Resources */,
+				0671D5521B341D4B0062CCE6 /* Source */,
 				0671D5121B336BF60062CCE6 /* Images.xcassets */,
 				0671D5051B336BF60062CCE6 /* Supporting Files */,
 			);
@@ -123,21 +88,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0671D51E1B336BF70062CCE6 /* AddressBookTests */ = {
+		0671D5521B341D4B0062CCE6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				0671D5211B336BF70062CCE6 /* AddressBookTests.m */,
-				0671D51F1B336BF70062CCE6 /* Supporting Files */,
+				0671D5091B336BF60062CCE6 /* AppDelegate.h */,
+				0671D50A1B336BF60062CCE6 /* AppDelegate.m */,
+				0671D50C1B336BF60062CCE6 /* ContactsViewController.h */,
+				0671D50D1B336BF60062CCE6 /* ContactsViewController.m */,
+				0671D52F1B3374CF0062CCE6 /* ContactsManager.h */,
+				0671D52D1B3374BE0062CCE6 /* ContactsManager.m */,
+				0671D5371B339D410062CCE6 /* ContactTableViewCell.h */,
+				0671D5381B339D410062CCE6 /* ContactTableViewCell.m */,
+				0671D54D1B3404190062CCE6 /* Contact.h */,
+				0671D54E1B3404190062CCE6 /* Contact.m */,
+				0671D5501B341C940062CCE6 /* ContactTableViewCell.xib */,
+				0671D53E1B34015B0062CCE6 /* ContactsDataModel.xcdatamodeld */,
 			);
-			path = AddressBookTests;
+			name = Source;
 			sourceTree = "<group>";
 		};
-		0671D51F1B336BF70062CCE6 /* Supporting Files */ = {
+		0671D5531B341D6F0062CCE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0671D5201B336BF70062CCE6 /* Info.plist */,
+				0671D53C1B33F8D90062CCE6 /* contacts.csv */,
+				0671D52B1B33707F0062CCE6 /* Default-568h@2x.png */,
 			);
-			name = "Supporting Files";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,24 +136,6 @@
 			productReference = 0671D5021B336BF60062CCE6 /* AddressBook.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0671D51A1B336BF70062CCE6 /* AddressBookTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0671D5281B336BF70062CCE6 /* Build configuration list for PBXNativeTarget "AddressBookTests" */;
-			buildPhases = (
-				0671D5171B336BF70062CCE6 /* Sources */,
-				0671D5181B336BF70062CCE6 /* Frameworks */,
-				0671D5191B336BF70062CCE6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0671D51D1B336BF70062CCE6 /* PBXTargetDependency */,
-			);
-			name = AddressBookTests;
-			productName = AddressBookTests;
-			productReference = 0671D51B1B336BF70062CCE6 /* AddressBookTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,10 +147,6 @@
 				TargetAttributes = {
 					0671D5011B336BF60062CCE6 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					0671D51A1B336BF70062CCE6 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 0671D5011B336BF60062CCE6;
 					};
 				};
 			};
@@ -210,7 +164,6 @@
 			projectRoot = "";
 			targets = (
 				0671D5011B336BF60062CCE6 /* AddressBook */,
-				0671D51A1B336BF70062CCE6 /* AddressBookTests */,
 			);
 		};
 /* End PBXProject section */
@@ -220,17 +173,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0671D5511B341C940062CCE6 /* ContactTableViewCell.xib in Resources */,
 				0671D5131B336BF60062CCE6 /* Images.xcassets in Resources */,
 				0671D53D1B33F8D90062CCE6 /* contacts.csv in Resources */,
 				0671D52C1B33707F0062CCE6 /* Default-568h@2x.png in Resources */,
-				0671D5361B339B1E0062CCE6 /* ContactTableViewCell.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0671D5191B336BF70062CCE6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,23 +197,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0671D5171B336BF70062CCE6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0671D5221B336BF70062CCE6 /* AddressBookTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0671D51D1B336BF70062CCE6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0671D5011B336BF60062CCE6 /* AddressBook */;
-			targetProxy = 0671D51C1B336BF70062CCE6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0671D5231B336BF70062CCE6 /* Debug */ = {
@@ -372,40 +302,6 @@
 			};
 			name = Release;
 		};
-		0671D5291B336BF70062CCE6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AddressBookTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AddressBook.app/AddressBook";
-			};
-			name = Debug;
-		};
-		0671D52A1B336BF70062CCE6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AddressBookTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AddressBook.app/AddressBook";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -423,14 +319,6 @@
 			buildConfigurations = (
 				0671D5261B336BF70062CCE6 /* Debug */,
 				0671D5271B336BF70062CCE6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		0671D5281B336BF70062CCE6 /* Build configuration list for PBXNativeTarget "AddressBookTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0671D5291B336BF70062CCE6 /* Debug */,
-				0671D52A1B336BF70062CCE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
