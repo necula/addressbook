@@ -10,7 +10,7 @@
 #import "ContactsManager.h"
 #import "Contact.h"
 
-#define DEFAULT_CONTACTS_FILE @"contacts.csv"
+#define DEFAULT_CSV_FILE @"contacts.csv"
 
 @interface ContactsManager ()
 
@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSManagedObjectContext* context;
 @property (nonatomic, strong) NSPersistentStoreCoordinator* psc;
 @property (nonatomic, strong) NSManagedObjectModel* model;
+@property (nonatomic, strong) NSEntityDescription* entityDescription;
 
 -(instancetype)init;
 
@@ -46,15 +47,20 @@ static uint32_t s_lastUID = 0;
     
     _contactsArray = [[NSMutableArray alloc] init];
 
-    
     if(![self loadStore])
     {
         // FIXME: proper error handling
         return nil;
     }
     
-    // FIXME: check for CoreData stuff or load data from CSV
-    [self addContactsFromCSV:DEFAULT_CONTACTS_FILE];
+    if(![self loadContactsFromStore])
+    {
+        // FIXME: proper error handling
+        return nil;
+    }
+    
+    if([_contactsArray count] == 0)
+        [self addContactsFromCSV:DEFAULT_CSV_FILE];
     
     return self;
 }
@@ -81,7 +87,34 @@ static uint32_t s_lastUID = 0;
         return NO;
     _context.persistentStoreCoordinator = _psc;
     
+    _entityDescription = [NSEntityDescription entityForName:@"Contact" inManagedObjectContext:_context];
+    if(!_entityDescription)
+        return NO;
+    
     return YES;
+}
+
+-(BOOL)loadContactsFromStore
+{
+    if([_contactsArray count] > 0)
+        return NO;
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    request.entity = _entityDescription;
+    NSError* error = nil;
+    NSArray* result = [self.context executeFetchRequest:request error:&error];
+    if(!request || error)
+        return NO;
+    
+    [_contactsArray addObjectsFromArray:result];
+    
+    return YES;
+}
+
+-(void)save
+{
+    NSError* error;
+    [_context save:&error];
 }
 
 -(NSArray*)getContacts
@@ -96,6 +129,7 @@ static uint32_t s_lastUID = 0;
     {
         if(UID == ((Contact*)_contactsArray[i]).uid)
         {
+            [_context deleteObject:_contactsArray[i]];
             [_contactsArray removeObjectAtIndex:i];
             break;
         }
@@ -105,8 +139,7 @@ static uint32_t s_lastUID = 0;
 -(void)addContactWithName:(NSString*)name surname:(NSString*)surname phoneNumber:(NSString*)phoneNumber emailAddress:(NSString*)emailAddress
 {
     uint32_t uid = s_lastUID++;
-    NSEntityDescription* entityDescription = [NSEntityDescription entityForName:@"Contact" inManagedObjectContext:_context];
-    Contact* c = [[Contact alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];
+    Contact* c = [[Contact alloc] initWithEntity:_entityDescription insertIntoManagedObjectContext:_context];
     c.name = name;
     c.surname = surname;
     c.phoneNumber = phoneNumber;

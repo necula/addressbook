@@ -23,7 +23,7 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"ContactTableViewCell" bundle:nil] forCellReuseIdentifier:@"ContactTableViewCell"];
     
-    UIBarButtonItem* addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addContact)];
+    UIBarButtonItem* addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.navigationItem.title = @"Contacts";
 }
@@ -32,7 +32,7 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)addContact
+-(void)addButtonPressed
 {
     [[ContactsManager sharedInstance] addRandomContact];
     
