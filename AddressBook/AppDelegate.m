@@ -27,7 +27,7 @@
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:cvc];
     self.window.rootViewController = nvc;
     
-    // Just initialize the contacts manager;
+    // Just initialize the contacts manager
     [ContactsManager sharedInstance];
 
     [self.window makeKeyAndVisible];
