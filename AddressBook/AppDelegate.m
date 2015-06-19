@@ -23,7 +23,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     ContactsViewController* cvc = [[ContactsViewController alloc] initWithStyle:UITableViewStylePlain];
-    self.window.rootViewController = cvc;
+    
+    UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:cvc];
+    self.window.rootViewController = nvc;
     
     // Just initialize the contacts manager;
     [ContactsManager sharedInstance];

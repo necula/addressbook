@@ -20,10 +20,24 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    
+    UIBarButtonItem* addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addContact)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    self.navigationItem.title = @"Contacts";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+-(void)addContact
+{
+    [[ContactsManager sharedInstance] addRandomContact];
+    
+    unsigned int contactsCount = (unsigned int)[[ContactsManager sharedInstance] getContacts].count - 1;
+    NSIndexPath* path = [NSIndexPath indexPathForRow:contactsCount inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationLeft];
+    [self.tableView scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -61,5 +75,6 @@
         }
     }
 }
+
 
 @end
