@@ -150,10 +150,12 @@ static uint32_t s_lastUID = 0;
 
 -(void)addRandomContact
 {
-    NSString* name = [NSString stringWithFormat:@"Name%d", arc4random() % 2048];
-    NSString* surname = [NSString stringWithFormat:@"Surname%d", arc4random() % 2048];
-    NSString* phoneNumber = @"1234";
-    NSString* emailAddress = @"name@server.com";
+    NSArray* namesArray = @[ @"James", @"John", @"David", @"Larry", @"Susan", @"Lisa", @"Amy", @"Sarah"];
+    NSArray* surnamesArray = @[ @"Smith", @"Williams", @"Jones", @"Miller", @"Jackson", @"Harris", @"Johnson", @"King"];
+    NSString* name = namesArray[arc4random() % [namesArray count]];
+    NSString* surname = surnamesArray[arc4random() % [surnamesArray count]];
+    NSString* phoneNumber = [NSString stringWithFormat:@"%d", 1000000 + arc4random() % 8999999];
+    NSString* emailAddress = [NSString stringWithFormat:@"%@.%c@mail.com", [name lowercaseString], [[surname lowercaseString] characterAtIndex:0]];
     [self addContactWithName:name surname:surname phoneNumber:phoneNumber emailAddress:emailAddress];
 }
 
